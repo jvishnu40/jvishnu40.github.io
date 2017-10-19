@@ -1,5 +1,5 @@
 # General Jekyll Config
-title:                OanhNN's blog
+title:                Shudarshon's blog
 subtitle:             Sharing anything I know and I think
 description:          >
     I am a web developer and an open-source contributor.
@@ -8,7 +8,7 @@ description:          >
 
 baseurl:              ""                                      # the subpath of your site, e.g. /blog
 url:                  "https://oanhnn.github.io"              # the base hostname & protocol for your site
-timezone:             Asia/Ho_Chi_Minh
+timezone:             Asia/Dhaka
 encoding:             utf-8
 locale:               vi_VN
 
@@ -87,12 +87,12 @@ defaults:
       type:           posts
     values:
       layout:         post
-      author:         Oanh Nguyen
+      author:         Shudarshon Chaki
 
 # Site customization
-google_analytics_key: UA-46600142-1             # Google Analytics key, leave blank to ignore
-disqus_shortname:     oanhnn                    # Disqus shortname for comments
-rss_feed:             /feed.xml                 # link to view rss feed (/atom.xml) in sidebar
+#google_analytics_key: UA-46600142-1             # Google Analytics key, leave blank to ignore
+#disqus_shortname:     oanhnn                    # Disqus shortname for comments
+#rss_feed:             /feed.xml                 # link to view rss feed (/atom.xml) in sidebar
 
 # Color for top bar, links, etc
 colors:
