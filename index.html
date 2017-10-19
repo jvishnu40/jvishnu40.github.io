@@ -16,11 +16,11 @@ layout: default
     </div>
     {% endif %}
     <div>{% if post.excerpt %}{{ post.excerpt }}{% else %}{{ post.content }}{% endif %}</div>
-    <div class="clearfix"><a href="{{ post.url }}" title="{{ post.title }}" class=""><span>Đọc thêm &raquo;</span></a></div>
+    <div class="clearfix"><a href="{{ post.url }}" title="{{ post.title }}" class=""><span>Read more &raquo;</span></a></div>
   </li>
   {% endfor %}
   {% if site.posts.size > 10 %}
-  <li class="old-posts"><a href="{{ 'archive.html' | relative_url }}">Bài cũ hơn</a></li>
+  <li class="old-posts"><a href="{{ 'archive.html' | relative_url }}">Older articles</a></li>
   {% endif %}
   </ul>
 </div>

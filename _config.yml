@@ -2,9 +2,8 @@
 title:                Shudarshon's blog
 subtitle:             Sharing anything I know and I think
 description:          >
-    I am a web developer and an open-source contributor.
-    I like making something that help people's work and
-    I hope those will make a world better.
+    Still a learner, fond of exploring various devops tools.<br>
+    I like sharing something that help people's work.<br>
 
 baseurl:              ""                                      # the subpath of your site, e.g. /blog
 url:                  "http://shudarshon.com"              # the base hostname & protocol for your site
