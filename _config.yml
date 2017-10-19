@@ -7,7 +7,7 @@ description:          >
     I hope those will make a world better.
 
 baseurl:              ""                                      # the subpath of your site, e.g. /blog
-url:                  "https://oanhnn.github.io"              # the base hostname & protocol for your site
+url:                  "http://shudarshon.com"              # the base hostname & protocol for your site
 timezone:             Asia/Dhaka
 encoding:             utf-8
 locale:               vi_VN
