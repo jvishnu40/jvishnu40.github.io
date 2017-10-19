@@ -1,5 +1,5 @@
 ---
-title:      Hello world
+title:      Learn Saltstack
 layout:     post
 category:   deployment
 tags: 	    [saltstack]
