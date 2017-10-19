@@ -1,8 +1,8 @@
 ---
 title:      Hi Jenkins
 layout:     post
-category:   ci-cd
-tags: 	    [jenkins, ci, cd]
+category:   Jenkins
+tags: 	    [ci, cd]
 ---
 
 Hello world!   
