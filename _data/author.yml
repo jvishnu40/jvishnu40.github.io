@@ -1,6 +1,6 @@
 name:               Shudarshon
 email:              sdrsn.chaki@gmail.com
-image:              https://en.gravatar.com/userimage/129568340/8af77137b2208ab1bc9e51840c78d948.jpg?size=350
+image:              https://en.gravatar.com/userimage/129568340/8af77137b2208ab1bc9e51840c78d948.jpg?size=150
 homepage:           http://shudarshon.com
 bio: >
     Still a learner, fond of exploring various devops tools.<br>
@@ -8,13 +8,13 @@ bio: >
 
 social:
   github:           shudarshon
-  #gitlab:           oanhnn
-  #bitbucket:        oanhnn
+  #gitlab:
+  #bitbucket:        ~
   #hacker_news:      ~
   #stackexchange:    ~
   #stackoverflow:    ~
-  #twitter:          oanhnn
-  facebook:         i.me.maself
+  #twitter:          ~
+  #facebook:         ~
   #instagram:        oanhnn
   #tumblr:           ~
   linkedin:         shudarshon
