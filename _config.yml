@@ -1,6 +1,6 @@
 # General Jekyll Config
 title:                Shudarshon's blog
-subtitle:             Sharing anything I know and I think
+subtitle:             Some random notes
 description:          >
     Still a learner, fond of exploring various devops tools.<br>
     I like sharing something that help people's work.<br>
@@ -9,7 +9,7 @@ baseurl:              ""                                      # the subpath of y
 url:                  "http://shudarshon.com"              # the base hostname & protocol for your site
 timezone:             Asia/Dhaka
 encoding:             utf-8
-locale:               vi_VN
+#locale:               vi_VN
 
 # Build settings
 permalink:            /:year-:month-:day/:title.html
