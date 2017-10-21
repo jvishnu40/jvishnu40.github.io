@@ -3,6 +3,7 @@ title:      High speed data transfer with Tsunami-UDP
 layout:     post
 category:   Tutorial
 tags: 	    [aws]
+features:   /assets/img/1_tsunami_udp_data_transfer.svg
 ---
 
 In this post, I will discuss about transferring high volume data from one server to another server. In a data transfer scenario, speed and reliability are the most important things to consider but in this post only transfer speed will be focused. To implement this scenario, AWS EC2 instance and Tsunami-UDP tool will be used.
