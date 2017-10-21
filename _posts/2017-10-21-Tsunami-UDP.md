@@ -5,13 +5,13 @@ category:   Tutorial
 tags: 	    [aws]
 ---
 
-In this post, I will discuss about transferring high volume data from one server to another server. In a data transfer scnario, speed and relaibility are the most important things to consider but in this post only transfer speed will be focused. To implement this scenario, AWS EC2 instance and Tsunami-UDP tool will be used.
+In this post, I will discuss about transferring high volume data from one server to another server. In a data transfer scenario, speed and reliability are the most important things to consider but in this post only transfer speed will be focused. To implement this scenario, AWS EC2 instance and Tsunami-UDP tool will be used.
 
 <!--more-->
 
-###What is Tsunami-UDP?###
+###What is Tsunami-UDP?
 
-Tsunami-UDP is an open source file transfer protocol which can transfer data with a much higher speed than other tools. Although it is rarely used in production system but still it can be used where bandwidth is low. This works with a combination of both TCP and UDP. UDP is for data transferring and TCP is used for maintaing the communication between the two servers. After installing Tsunami-UDP we will get a client program `tsunami` and a server program `tsunamid`. To use Tsunami-UDP in AWS we must configure the security group of server instance (where data is ready to be transferred) to allow port 51038 as an outbound rule. In the same way, we need to allow 51038 port as an inbound rule in the client EC2 instance. By default, Tsunami-UDP uses port 51038.
+Tsunami-UDP is an open source file transfer protocol which can transfer data with a much higher speed than other tools. Although it is rarely used in production system but still it can be used where bandwidth is low. This works with a combination of both TCP and UDP. UDP is for data transferring and TCP is used for maintaining the communication between the two servers. After installing Tsunami-UDP we will get a client program `tsunami` and a server program `tsunamid`. To use Tsunami-UDP in AWS we must configure the security group of server instance (where data is ready to be transferred) to allow port 51038 as an outbound rule. In the same way, we need to allow 51038 port as an inbound rule in the client EC2 instance. By default, Tsunami-UDP uses port 51038.
 
 To transfer files between two separate servers we need to install Tsunami-UDP in both of them. Lets say, machine A is the server where data is ready to be transferred and machine B is the server where we will transfer data. This program can be installed easily by following these steps,
 
@@ -32,7 +32,7 @@ $ fallocate -l 5G dummy.file
 $ tar -cvzf data.tar.gz dummy.file
 ```
 
-Now we will copy `kill.sh` script from `trans-tsunami` directory into `data` directory. The task of this script is to automatically close the tsunami server when it finishes tranferring the first data. If it is needed to send multiple files then it is recommended to tar those file into a single file. Assuming you are still in `data` directory, use following command to copy the file,
+Now we will copy `kill.sh` script from `trans-tsunami` directory into `data` directory. The task of this script is to automatically close the tsunami server when it finishes transferring the first data. If it is needed to send multiple files then it is recommended to tar those file into a single file. Assuming you are still in `data` directory, use following command to copy the file,
 
 ```shell
 $ cp ../kill.sh .
