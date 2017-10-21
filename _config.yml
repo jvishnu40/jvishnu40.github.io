@@ -89,7 +89,7 @@ defaults:
       author:         Shudarshon Chaki
 
 # Site customization
-google_analytics_key: UA-107855029-1             # Google Analytics key, leave blank to ignore
+google_analytics_key: UA-107855029-2             # Google Analytics key, leave blank to ignore
 #disqus_shortname:     oanhnn                    # Disqus shortname for comments
 #rss_feed:             /feed.xml                 # link to view rss feed (/atom.xml) in sidebar
 
