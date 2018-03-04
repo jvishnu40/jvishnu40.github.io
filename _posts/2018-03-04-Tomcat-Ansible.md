@@ -10,7 +10,12 @@ In this post, I will discuss on setting up tomcat application server in automate
 
 # Prerequisite
 
-You just need one linux server with SSH access from local machine. I will be using Ubuntu 16.04.3 in AWS environment. Make sure you have 8080 port open in the firewall.
+You just need one linux server with SSH access from local machine. I will be using Ubuntu 16.04.3 in AWS environment. Make sure you have 8080 port open in the firewall. Also you need to install python in remote server otherwise ansible will not able to run remote tasks there,
+
+```shell
+ubuntu@remote-server:~$ sudo apt-get update
+ubuntu@remote-server:~$ sudo apt-get install python-setuptools -y
+```
 
 # Install ansible and configure
 
