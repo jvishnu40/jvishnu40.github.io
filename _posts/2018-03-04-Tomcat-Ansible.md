@@ -4,7 +4,7 @@ layout:     post
 category:   Tutorial
 tags: 	    [tomcat, ansible, cfm]
 ---
-In this post I will discuss on setting up tomcat application server in automated way using ansible. Ansible makes it easier for us to remotely manage configuration of different servers.
+In this post, I will discuss on setting up tomcat application server in automated way using ansible. Ansible makes it easier for us to remotely manage configuration of different servers.
 
 <!--more-->
 
@@ -26,20 +26,20 @@ Now change the `host_key_checking` parameter of ansible configuration file to `F
 
 # Configure ansible role setting
 
-To run Tomcat in remote server you also need to run java there. So you need to install both java and ansible in the remote server. Following commands will help you to setup java and tomcat in remote server
+You will need java to run tomcat in remote server. So you need to install both java and tomcat there. Following commands will help you to setup java and tomcat in remote server
 
 ```shell
 ubuntu@local-machine:~$ git clone https://github.com/shudarshon/ansible_role.git
 ubuntu@local-machine:~$ cd ansible_role
-ubuntu@local-machine:~$ vim hosts   # change the target serer ip and set username with private key file location accordingly. then save and quit
-ubuntu@local-machine:~$ ansible -i hosts play.yml #this will start setting up tomcat and java in the server
+ubuntu@local-machine:~/ansible_role$ vim hosts   # change the target serer ip and set username with private key file location accordingly. then save and quit
+ubuntu@local-machine:~/ansible_role$ ansible -i hosts play.yml #this will start setting up tomcat and java in the server
 ```
 
 # Install
 
 I assume that already you have completed setting up ansible and configured `hosts` file with remote server information. Now, run ansible to perform java and tomcat setup in the target server
 ```shell
-ubuntu@local-machine:~$ ansible -i hosts play.yml
+ubuntu@local-machine:~/ansible_role$ ansible -i hosts play.yml
 ```
 
-Now, browse to http://SERVER_IP:8080. For ease of task, I have saved as tomcat admin/manager username/password as `admin/adminsecret` as plaintext in the ansible role. Its not a good practice at all. Later, on another post I will try to implement secure credential management in ansible.
+Now, browse to http://SERVER_IP:8080. For ease of task, I have saved tomcat admin/manager username/password as `admin/adminsecret` as plaintext in the ansible role. Its not a good practice at all. Later, on another post I will try to implement secure credential management in ansible.
