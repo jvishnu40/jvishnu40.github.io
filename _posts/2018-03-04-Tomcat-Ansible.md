@@ -3,6 +3,7 @@ title:      Automated Tomcat Installation with Ansible
 layout:     post
 category:   Tutorial
 tags: 	    [tomcat, ansible, cfm]
+#feature:   /assets/img/1_tsunami_udp_data_transfer.svg
 ---
 In this post, I will discuss on setting up tomcat application server in automated way using ansible. Ansible makes it easier for us to remotely manage configuration of different servers.
 
