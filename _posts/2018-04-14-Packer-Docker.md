@@ -5,7 +5,7 @@ category:   Tutorial
 tags: 	    [docker, packer, jenkins, orchestration, security, iaac]
 #feature:   /assets/img/1_tsunami_udp_data_transfer.svg
 ---
-Docker is a tool for building application image and packer is a tool for creating golden image from single source configuration. So docker images can be built from both docker and packer. If you bake Jenkins then the image creation and uploading process will be automated. In this article, I have provided an infrastructure-as-code example to demonstrate the idea.
+Docker is a tool for building application image and packer is a tool for creating golden image from single source configuration. So docker images can be built from both docker and packer. If you bake them with Jenkins then application image creation and uploading process will be automated. In this article, I have provided an infrastructure-as-code example to demonstrate the idea.
 
 <!--more-->
 
@@ -34,4 +34,4 @@ If you want to automate the application packaging process then you can use the c
 $ docker system prune -af
 ```
 
-If you have experience of working with Jenkins or other build automation server then you can find this idea quite helpful otherwise it will be difficult to understand. This post is actually written focusing on Jenkins pipeline to implement automated application packaging using docker without Dockerfile!
+If you have experience of working with Jenkins or other build automation server then you can find this blog post helpful otherwise it may be difficult to understand. This post is actually written focusing on Jenkins pipeline stages to implement automated application packaging using docker without Dockerfile!
