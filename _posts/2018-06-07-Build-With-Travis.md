@@ -1,14 +1,14 @@
 ---
-title:      Performing Application Build and Remote Deployment with Travis CI
+title:      Performing application build and remote deployment with Travis CI
 layout:     post
 category:   Tutorial
-tags: 	    [ci/cd]
+tags: 	    [ci/cd, travis]
 #feature:   /assets/img/1_tsunami_udp_data_transfer.svg
 ---
-Travis CI is another popular CI/CD service which is free for open source projects with limited functionality. In the free version, unlike Jenkins, Travis CI builds application in a  dockerized environment whose underlying architecture is can be seen in build log. After a Jenkins setup specially in a Master-Slave model we have to configure a lot of plugins, remote SSHing, spicific user, privileges etc. Instead Travis CI comes with single YAML configuration file where we need specify parameters and configure them to perform successful build and remote deployment. In this topic I will be focusing only on writing Travis CI/CD configuration not signing up Travis CI and integrating it with github source code repository.
+Travis CI is another popular CI/CD service which is free for open source projects with limited functionalities. In the free version, unlike Jenkins, Travis CI builds application in a  dockerized environment whose underlying architecture can be seen in Travis build log. Travis CI comes with single YAML configuration file where we need specify parameters and configure them to perform successful build and remote deployment. In this topic I will be focusing only on writing Travis CI/CD configuration not signing up Travis CI and integrating it with github source code repository.
 <!--more-->
 
-At first, we will create a `.travis.yml` file and `.travis` directory in the root of source code repository. That YAML file is the configuration file of Travis CI and the directory will be used for storing encrypted key, deployment script which will be used by the Travis at build and deployment stage of the application. After creating the file and directory we need to install Travis client in the workstation. After installing Travis client authenticate with GitHub username and password to connect successfully with Travis account.
+At first, we will create a `.travis.yml` file and `.travis` directory in the root of source code repository. That YAML file is the configuration file of Travis CI and the directory will be used for storing encrypted key, deployment script which will be used by the Travis at build and deployment stage of the application. After creating the file and directory we need to install Travis client in localhost. After installing Travis client authenticate with GitHub username and password to connect successfully with Travis account.
 
 ```sh
 sudo gem install travis
@@ -23,7 +23,7 @@ travis encrypt DEPLOY_HOST=X.X.X.X --add
 travis encrypt DEPLOY_PATH=/home/user/app --add
 travis encrypt DEPLOY_USER=user --add
 ```
-After using the command we will see that following part has been added to Travis configuration file.
+After using the command we can see that following part has been added to Travis configuration file.
 
 ```
 env:
@@ -39,7 +39,7 @@ travis encrypt-file deploy_rsa --add
 mv deploy_rsa.enc .travis/
 ```
 
-So, our private key is encrypted and moved into `.travis` folder but still the public key remains. Travis will decrypt the private key during the deployment stage of the application. But still the public key remains. We need to add that public key in remote server's `authorized_keys` file for SSH approval. (For EC2 instance, better you bake AMI with packer and predefined SSH key )
+So, our private key is encrypted and moved into `.travis` folder. Travis will decrypt the private key during the deployment stage of the application. But still the public key remains. We need to add that public key in remote server's `authorized_keys` file for SSH approval. (For EC2 instance, better you bake AMI with packer and predefined SSH key )
 
 ```sh
 cat ./deploy_rsa.pub | ssh -i ~/.key/test.pem DEPLOY_USER@DEPLOY_HOST "cat - >> ~/.ssh/authorized_keys"
