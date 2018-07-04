@@ -57,7 +57,7 @@ Also we need to allow script approval in Jenkins otherwise it will throw error d
 
 * Optionally, you can add shared library in the Jenkinsfile for pre and post build notifications.
 
-* If your project uses remote database (RDS) then you need to allow CodeBuild IP address in firewall rule. Gather CodeBuild service IP range from https://ip-ranges.amazonaws.com/ip-ranges.json.
+* If your project uses remote database (RDS) then you need to allow CodeBuild IP address in firewall rule. Gather CodeBuild service IP range from [here](https://ip-ranges.amazonaws.com/ip-ranges.json).
 
 * If everything is fine then trigger a build from Jenkins and you will get build log right in the Jenkins console log. Hurray, so no more window switching to CodeBuild for viewing build logs!
 
