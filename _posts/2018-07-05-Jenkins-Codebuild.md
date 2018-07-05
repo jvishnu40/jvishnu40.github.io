@@ -17,6 +17,7 @@ CodeBuild is an excellent tool to perform build and test jobs. But you need to w
 * Jenkins Server with CodeBuild plugins installed
 * Source Code Repository (GitHub/BitBucket/CodeCommit)
 * CodeBuild Region information
+* Clone this [repository](https://github.com/shudarshon/challenge-jenkins)
 
 # Procedure
 
@@ -25,7 +26,7 @@ CodeBuild is an excellent tool to perform build and test jobs. But you need to w
 * Next, we need to create IAM role which will allow CodeBuild to assume policy specified user privileges to use AWS resources. Make sure you have changed CodeBuild project name, IAM username, region in the policy file. Following command will create IAM role,
 
 ```
-$ cd iam-codebuild-role-policy/
+$ cd 7-jenkins-codebuild/iam-codebuild-role-policy/
 $ aws iam create-role --role-name CodeBuildServiceRole --assume-role-policy-document file://create-role.json
 $ aws iam put-role-policy --role-name CodeBuildServiceRole --policy-name CodeBuildServiceRolePolicy --policy-document file://put-role-policy.json
 ```
