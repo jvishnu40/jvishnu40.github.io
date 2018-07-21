@@ -58,6 +58,8 @@ Now, these parameters are safe. We will use it in the build server which can be 
 * Now we will create a bash script alongside the Dockerfile for automatically triggering the value change in build pipeline
 
 ```
+#!/bin/bash
+
 $(aws ssm get-parameters --names "SONARQUBE_JDBC_USERNAME" | jq -r '.Parameters| .[] | "export " + .Name + "=" + .Value + ""')
 $(aws ssm get-parameters --names "SONARQUBE_JDBC_PASSWORD" | jq -r '.Parameters| .[] | "export " + .Name + "=" + .Value + ""')
 $(aws ssm get-parameters --names "SONARQUBE_JDBC_URL" | jq -r '.Parameters| .[] | "export " + .Name + "=" + .Value + ""')
