@@ -1,5 +1,5 @@
 ---
-title:      IaaC: Infrastructure provisioning and configuration management with AWS, Terraform and Ansible
+title:      Infrastructure provisioning and configuration management with AWS, Terraform and Ansible
 layout:     post
 category:   Tutorial
 tags: 	    [iaac, terraform, ansible, cfm, aws]
