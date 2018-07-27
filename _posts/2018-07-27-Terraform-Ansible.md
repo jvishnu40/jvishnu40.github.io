@@ -99,7 +99,7 @@ $ terraform plan
 $ terraform apply
 ```
 
-* After it completes then you can check that `htop` is installed in each of the instances. Alternatively, you can use Ansible role also with your own configuration.
+* After the operation is completed then you can check that `htop` is installed in each of the instances. Alternatively, you can use Ansible role also with your own configuration.
 
 # Issue
 
