@@ -14,7 +14,7 @@ There is a way of protecting environment variable which is creating separate fil
 * Enables to track version control of parameter store variables
 * Easily integrates with various AWS services
 
-AWS Paramter Store service can be found under System Mangement Tools in EC2 dashboard. In this example, I am not going to write an entire Dockerfile instead I will use a portion in my example.
+AWS Parameter Store service can be found under System Management Tools in EC2 dashboard. In this example, I am not going to write an entire Dockerfile instead I will use a portion in my example.
 
 # Requirements
 
