@@ -5,8 +5,9 @@ category:   Tutorial
 tags: 	    [iaac, terraform, s3]
 #feature:   /assets/img/1_tsunami_udp_data_transfer.svg
 ---
-If you are familiar with IaC then you must have heard about terraform, right? Terraform is an awesome tool letting you to create, destroy, provision and configure your infrastructure as code. When terraform is instructed to run against some of its configuration then it creates a state file in the developer machine. This state file contains infrastructure configuration as applied by Terraform. But if you want to work on the terraform codebase as a team allowing terraform to create state file locally then every member will be in a great dilemma. Its because the other developers would be also requiring access to this file. Well you might think that we can use git, right? But one problem with that is some sensitive fields such as credentials might get exposed and this is not what you want. One soultion is to this criteria is to use terraform S3 backend for storing infrastructure state in S3 bukcet. In this post, we are going to discuss and implement terraform S3 backed in AWS.
+If you are familiar with IaC then you must have heard about terraform, right? Terraform is an awesome tool letting you to create, destroy, provision and configure your infrastructure as code. When terraform is instructed to run against some of its configuration then it creates a state file in the developer machine. This state file contains infrastructure configuration as applied by Terraform. But if you want to work on the terraform codebase as a team allowing terraform to create state file locally then every member will be in a great dilemma.
 <!--more-->
+Its because the other developers would be also requiring access to this file. Well you might think that we can use git, right? But one problem with that is some sensitive fields such as credentials might get exposed and this is not what you want. One soultion is to this criteria is to use terraform S3 backend for storing infrastructure state in S3 bukcet. In this post, we are going to discuss and implement terraform S3 backed in AWS.
 
 # Requirements
 
@@ -40,16 +41,6 @@ $ cd challenge-terraform/6-tf-s3-backend/vpc
 * From the source code we can see that there are 4 different AWS resources terraform configuration categorized into specific folder by resource name. Lets find out how a terraform remote backend configuration (vpc/backend.tf) looks like
 
 ```
-provider "aws" {
-  region  = "${var.aws_region}"
-}
-
-data "aws_availability_zones" "available" {}
-
-################################################################################
-## Terraform Remote Backend
-################################################################################
-
 terraform {
   backend "s3" {
     bucket = "webapp-terraform-state"
@@ -72,52 +63,6 @@ output "vpc_id" {
 output "vpc_cidr" {
   value = "${aws_vpc.vpc.cidr_block}"
 }
-
-output "public_subnet_id" {
-  value = [
-    "${aws_subnet.subnet_1_public.*.id}",
-    "${aws_subnet.subnet_2_public.*.id}"
-  ]
-}
-
-output "webapp_subnet_id" {
-  value = [
-    "${aws_subnet.subnet_1_private_webapp.*.id}",
-    "${aws_subnet.subnet_2_private_webapp.*.id}"
-  ]
-}
-
-output "webapp_subnet_cidr" {
-  value = [
-    "${aws_subnet.subnet_1_private_webapp.*.cidr_block}",
-    "${aws_subnet.subnet_2_private_webapp.*.cidr_block}"
-  ]
-}
-
-output "rds_subnet_id" {
-  value = [
-    "${aws_subnet.subnet_1_public_rds.*.id}",
-    "${aws_subnet.subnet_2_public_rds.*.id}"
-  ]
-}
-
-output "cislave_subnet_id" {
-  value = [
-    "${aws_subnet.subnet_1_private_cislave.*.id}",
-    "${aws_subnet.subnet_2_private_cislave.*.id}"
-  ]
-}
-
-output "spare_subnet_id" {
-  value = [
-    "${aws_subnet.subnet_1_private_spare.*.id}",
-    "${aws_subnet.subnet_2_private_spare.*.id}"
-  ]
-}
-
-output "rds_subnet_group_name" {
-  value = "${aws_db_subnet_group.rds_subnetgroup.*.name}"
-}
 ```
 
 * Now we need to initialize this configuration with terraform and make it create a VPC resource in AWS. After it finishes resource creation it will output the specified resource attributes in the screen also saving them in the S3 bucket's `vpc/vpc.tfstate` file.
@@ -127,7 +72,31 @@ $ make init
 $ make apply
 ```
 
-* 
+* Now lets create security group in that specific VPC. For that, we need to introduce VPC remote state file in security group remote backend configuration and use that backend information as a data in the security group terraform configuration. Let see the VPC data source configuration of security group backend configuration (sg/backend.tf)
+
+```
+data "terraform_remote_state" "shared_vpc_local" {
+  backend = "s3"
+  config {
+    bucket = "webapp-terraform-state"
+    key    = "vpc/vpc.tfstate"
+    region = "us-east-1"
+  }
+}
+```
+
+* Next we will configure terraform to use that data source for retrieving `vpc_cidr` property from remote state file as we configured the *same name* in vpc/output.tf file.
+
+```
+egress {
+  from_port   = 80
+  to_port     = 80
+  protocol    = "tcp"
+  cidr_blocks = ["${data.terraform_remote_state.shared_vpc_local.vpc_cidr}"]
+}
+```
+
+So finally, our configuration is ready to deploy. Use `make apply` to run the configuration and you will find that security groups got created with desired configuration. If you look at the source code you will find out that in the `rds/terraform.tfvars` file  I haven't masked the real username, password, version and db engine values. This is not desirable for security concern. May be in the next post I will write on that. Get the source code content [here](https://github.com/shudarshon/challenge-terraform/tree/master/6-tf-s3-backend). Thanks for visiting!
 
 # Issue
 
