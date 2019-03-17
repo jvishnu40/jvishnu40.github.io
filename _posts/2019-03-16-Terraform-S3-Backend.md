@@ -31,7 +31,7 @@ $ export AWS_SECRET_ACCESS_KEY="ZZZZXXXXX"
 $ aws s3api create-bucket --bucket webapp-terraform-state --region us-east-1
 ```
 
-* Next, clone this repository and get into specific source code repository vpc resource.
+* Next, clone this repository and get into specific source code repository.
 
 ```
 $ git clone https://github.com/shudarshon/challenge-terraform.git
