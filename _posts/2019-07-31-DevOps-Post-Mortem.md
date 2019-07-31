@@ -12,7 +12,7 @@ As an operation/reliability engineer, you are already well introduced to service
 
 So let's discuss on contents of postmortems. This report consists of some sections which are very specific to its purpose. Such as incident date, Author, Status, Summary, Impact, Root Cause, Trigger, Resolution, Detection, Proof of Concept for future mitigation, Supporting information and lastly people involved behind the solution of the crisis. This report can be brought to a greater extent. That depends on the size of the team, number of users and business value of the service. A sample post mortem report (readme format) would look like,
 
-```
+
 # Date
 
 July 29th, 2019
@@ -47,11 +47,11 @@ Source code changes resulted in automated build which made liquibase to perform 
 
 # Trigger 
 
-The outage was caused after the push to source code with commit id xxxxxxx. This commit eventually built S3 bucket build artifact with version xxxxxxxxxxxxxxxxxxxxxxxx. New artifact got deployed into server and occurred outage.
+The outage was caused after the push to source code with commit id xyzxyz. This commit eventually built S3 bucket build artifact with version X. New artifact got deployed into server and occurred outage.
 
 # Resolution 
 
-The outage was fixed after the push to source code with commit id yyyyyyy.  This commit eventually built S3 bucket build artifact with version yyyyyyyyyyyyyyyyyyyyyyy. New artifact got deployed and fixed outage. 
+The outage was fixed after the push to source code with commit id zxyzxy.  This commit eventually built S3 bucket build artifact with version Y. New artifact got deployed and fixed outage. 
 
 # Detection 
 
@@ -76,6 +76,6 @@ People who worked behind resolving the issue:
  * Backend Guy ( backend@example.com )
  * DevOps Guy ( devops@example.com )
 
-```
+
 
 Wait, you might be thinking I am blabbering too much about reporting, postmortems, procedures, etc. You might be thinking "how does blame is related to this?" Let me explain that a little. Remember that a good team is better than the best when good intentions of team members are appreciated in parallel with their hard work. However, by nature, we are prone to error and in a team perspective, this might somehow result in chaos. During the time of service downtime crisis, the meaningful approaches would be covering up mistakes, bringing the discipline back and documenting the mistakes for better learning and simulating for future avoidance. And through writing postmortems, it is possible to bring out the maximum value of the team in the future by the removal of casting blame to one another. So say no to repeated mistakes!
