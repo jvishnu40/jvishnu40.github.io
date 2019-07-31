@@ -31,9 +31,9 @@ Resolved
 
 X application (hello.example.com) was down for 5 minutes 9 seconds. Due to SQL error in the database constraint in liquibase settings residing under source code. During the error time application was responding with HTTP error 404.
 
-**Incident Occurrence Time:** 11:57 A.M. ( UTC + 6:00 )
-**Investigation Starts:** 11:58 A.M. ( UTC + 6:00 )
-**Investigation Finished:** 12:03 P.M. ( UTC + 6:00 )
+* **Incident Occurrence Time:** 11:57 A.M. ( UTC + 6:00 )
+* **Investigation Starts:** 11:58 A.M. ( UTC + 6:00 )
+* **Investigation Finished:** 12:03 P.M. ( UTC + 6:00 )
 
 Time Needed: 5 minutes
 
