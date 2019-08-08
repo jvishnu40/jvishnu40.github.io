@@ -10,7 +10,8 @@ The more you write code regardless of application or infrastructure, the more yo
 
 Infrastructure as a Code (IAAC) is a blessing to us all, which allows us to code our infrastructure configuration under version control. To reuse a particular piece of code over and over, you have to declare modules just as the same you declare objects in OOP. But what if the base configuration template is not battle-tested or gets prone to configuration drift?  Well, in this case, you better implement unit test cases to cross-check your configuration against acceptance criteria.
 
-# Required tools
+
+# Required Tools
 
 * __terraform:__ Terraform is a widely used tool for writing infrastructure code and spinning cloud resources. you can also use existing code configuration by writing modules.
 * __kitchen-terraform:__  It is a terraform which is used to test terraform infrastructure configuration
@@ -21,9 +22,10 @@ Infrastructure as a Code (IAAC) is a blessing to us all, which allows us to code
 * __git:__ Do I also need to introduce git, seriously?
 * __make:__ Linux build tool to execute task in easy way
 
-# Detailed Discussion
 
-* At first make sure that you have git, ruby, bundler, make and terraform installed in your system.
+# Discussion
+
+* At first make sure that you have git, ruby, bundler and terraform installed in your system.
 
 * In the next step, clone [this](https://github.com/shudarshon/terraform-aws-unit-test) git repository. This repository holds tiny Configurations for testing terraform code against AWS. The project structure looks like following ![Project Structure](/assets/img/2019-08-09.png)*Project Structure*.
 
@@ -142,13 +144,14 @@ describe ec2(ec2_name.to_s) do
 end
 ```
 
-# Run Project
+
+# How to run
 
 * Copy main.tf.env to main.tf file. then use terraform variable values according to module configuration,
 
  `cp main.tf.env main.tf`
 
- * Install testing dependencies gems by running,
+* Install testing dependencies gems by running,
 
  `bundle install --path vendor/bundle`
 
@@ -160,9 +163,10 @@ end
 
  `bundle exec kitchen verify`
 
- * Once testing is done destroy the resources,
+* Once testing is done destroy the resources,
 
  `bundle exec kitchen destroy`
+
 
 # Issue
 
