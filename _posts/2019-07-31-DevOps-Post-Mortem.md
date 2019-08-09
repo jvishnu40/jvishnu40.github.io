@@ -1,5 +1,5 @@
 ---
-title:      Writing incident postmortem to learn from the previous history and avoid needless blaming
+title:      Writing incident postmortem to learn from previous history and avoid blaming
 layout:     post
 category:   Tutorial
 tags: 	    [devops, sre, incident, postmortem, crash, system analysis]

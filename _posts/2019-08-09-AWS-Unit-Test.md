@@ -1,5 +1,5 @@
 ---
-title:      Writing unit test case for AWS infrastructure
+title:      Writing simple unit test case for AWS infrastructure
 layout:     post
 category:   Tutorial
 tags: 	    [testing, aws, terraform]
