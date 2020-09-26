@@ -26,6 +26,6 @@ The essence of this theory is that when any method we apply to solve a problem e
 
 In addition to the above three theories, there are many other theories that are discussed in various fields of "software engineering". However, today's discussion will be limited to this.
 
-[1] "Anything that can go wrong will go wrong" - Murphy's law [https://bit.ly/36575sR]
-[2] "Simple things should be simple, complex things should be possible" - Alan Kay [https://bit.ly/3060ydy]
-[3] Cobra Effect [https://bit.ly/3j65ruK]
+- [1] "Anything that can go wrong will go wrong" - Murphy's law [https://bit.ly/36575sR]
+- [2] "Simple things should be simple, complex things should be possible" - Alan Kay [https://bit.ly/3060ydy]
+- [3] Cobra Effect [https://bit.ly/3j65ruK]
