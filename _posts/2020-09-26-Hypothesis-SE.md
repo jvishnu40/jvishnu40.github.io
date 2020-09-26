@@ -2,7 +2,7 @@
 title:      Some theories that I find practical in software engineering
 layout:     post
 category:   Theoretical
-tags: 	    [theory, devops]
+tags: 	    [theory, devops, software, engineering]
 #feature:   /assets/img/1_tsunami_udp_data_transfer.svg
 ---
 
