@@ -1,3 +1,11 @@
+---
+title:      Some theories that I find practical in software engineering
+layout:     post
+category:   Theoretical
+tags: 	    [theory, devops]
+#feature:   /assets/img/1_tsunami_udp_data_transfer.svg
+---
+
 Today I will highlight a few theories that are well related to some of the extents of software engineering. "Software engineering" is a method that divides the whole development process into smaller modules and moves towards the solution through detailed analysis. Each of these small modules is the sum of one or more problems.
 
 And one of the special things about "software engineering" is that here you have to think and study very well about both "problems" and possible "solutions". Because each solution will somehow create new problems, albeit in a very subtle way. Let's highlight the facts without exaggerating this time. Each theory will be mentioned with a link reference at the bottom of the post.
