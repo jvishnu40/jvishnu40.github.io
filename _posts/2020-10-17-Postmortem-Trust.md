@@ -1,8 +1,8 @@
 ---
-title:      Building trust 
+title:      Using post-mortem report as a medium to build trust across cross-team members
 layout:     post
-category:   Theoretical
-tags: 	    [theory, devops, software, engineering]
+category:   Opinion
+tags: 	    [communication, devops, sre, software, postmortem]
 #feature:   /assets/img/1_tsunami_udp_data_transfer.svg
 ---
 
