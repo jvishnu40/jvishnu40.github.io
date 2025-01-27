@@ -1,13 +1,13 @@
 # General Jekyll Config
-title:                Shudarshon's blog
+title:                Vishnu's Note Junk
 subtitle:             Some random notes
 description:          >
-    Still a learner, fond of exploring various devops tools.<br>
-    I like sharing something that help people's work.<br>
+    One step at a time. <br>
+    The place I vomit my notes!!<br>
 
 baseurl:              ""                                      # the subpath of your site, e.g. /blog
 url:                  "http://shudarshon.com"              # the base hostname & protocol for your site
-timezone:             Asia/Dhaka
+timezone:             Asia/Singapore
 encoding:             utf-8
 #locale:               vi_VN
 
@@ -86,7 +86,7 @@ defaults:
       type:           posts
     values:
       layout:         post
-      author:         Shudarshon Chaki
+      author:         Vishnu
 
 # Site customization
 google_analytics_key: UA-107855029-1             # Google Analytics key, leave blank to ignore
