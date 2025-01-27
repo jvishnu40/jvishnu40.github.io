@@ -1,12 +1,12 @@
 # General Jekyll Config
-title:                Vishnu's Note Junk
+title:                Vishnu's Notes Junk
 subtitle:             Some random notes
 description:          >
     One step at a time. <br>
     The place I vomit my notes!!<br>
 
 baseurl:              ""                                      # the subpath of your site, e.g. /blog
-url:                  "http://shudarshon.com"              # the base hostname & protocol for your site
+url:                  "https://vishnu.lol"              # the base hostname & protocol for your site
 timezone:             Asia/Singapore
 encoding:             utf-8
 #locale:               vi_VN
