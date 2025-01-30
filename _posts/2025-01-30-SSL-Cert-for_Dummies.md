@@ -1,5 +1,5 @@
 ---
-title:      SQL for Dummies
+title:      SSL for Dummies
 layout:     post
 category:   Notes
 tags: 	    [beginner, TLS, SSL]
